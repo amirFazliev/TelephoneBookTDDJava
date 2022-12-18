@@ -16,7 +16,7 @@ public class PhoneBook {
         return false;
     }
 
-    public String findByNumber() {
-        return null;
+    public String findByNumber(String phoneNumber) {
+        return hashMap.get(phoneNumber);
     }
 }

@@ -35,9 +35,10 @@ public class PhoneBookTest {
     @Test
     public void findByNumberTestTrue() {
         PhoneBook phoneBook = new PhoneBook();
-        String expected = null;
+        phoneBook.add("29926574", "Petya");
+        String expected = "Petya";
 
-        String result = phoneBook.findByNumber();
+        String result = phoneBook.findByNumber("29926574");
 
         assertEquals(expected, result);
     }
@@ -45,9 +46,10 @@ public class PhoneBookTest {
     @Test
     public void findByNumberTestFalse() {
         PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("29926574", "Petya");
         String expected = "Hello";
 
-        String result = phoneBook.findByNumber();
+        String result = phoneBook.findByNumber("29926574");
 
         assertNotEquals(expected, result);
     }
