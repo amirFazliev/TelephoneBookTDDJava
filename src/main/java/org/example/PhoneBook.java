@@ -19,4 +19,8 @@ public class PhoneBook {
     public String findByNumber(String phoneNumber) {
         return hashMap.get(phoneNumber);
     }
+
+    public String findByName () {
+        return null;
+    }
 }
