@@ -1,5 +1,6 @@
 import org.example.PhoneBook;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -74,5 +75,23 @@ public class PhoneBookTest {
         String result = phoneBook.findByName("Petya");
 
         assertNotEquals(expected, result);
+    }
+
+    @Test
+    public void printAllNamesTrue() {
+        PhoneBook phoneBook = Mockito.mock(PhoneBook.class);
+        Mockito.doCallRealMethod().when(phoneBook).printAllNames();
+
+        phoneBook.printAllNames();
+
+        Mockito.verify(phoneBook, Mockito.times(1)).printAllNames();
+    }
+
+    @Test
+    public void printAllNamesNever() {
+        PhoneBook phoneBook = Mockito.mock(PhoneBook.class);
+        Mockito.doCallRealMethod().when(phoneBook).printAllNames();
+
+        Mockito.verify(phoneBook, Mockito.never()).printAllNames();
     }
 }
