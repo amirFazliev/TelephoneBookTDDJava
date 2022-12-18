@@ -2,6 +2,7 @@ import org.example.PhoneBook;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 
 public class PhoneBookTest {
@@ -13,8 +14,8 @@ public class PhoneBookTest {
         boolean expected = true;
 
         boolean result = phoneBook.add("29926574", "Petya");
-        System.out.println()
-        ;
+        System.out.println();
+
         assertEquals(expected, result);
     }
 
@@ -29,5 +30,25 @@ public class PhoneBookTest {
         System.out.println();
 
         assertEquals(expected, result);
+    }
+
+    @Test
+    public void findByNumberTestTrue() {
+        PhoneBook phoneBook = new PhoneBook();
+        String expected = null;
+
+        String result = phoneBook.findByNumber();
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void findByNumberTestFalse() {
+        PhoneBook phoneBook = new PhoneBook();
+        String expected = "Hello";
+
+        String result = phoneBook.findByNumber();
+
+        assertNotEquals(expected, result);
     }
 }
