@@ -60,7 +60,7 @@ public class PhoneBookTest {
         phoneBook.add("29926574", "Petya");
         String expected = "29926574";
 
-        String result = phoneBook.findByName();
+        String result = phoneBook.findByName("Petya");
 
         assertEquals(expected, result);
     }
@@ -71,7 +71,7 @@ public class PhoneBookTest {
         phoneBook.add("29926574", "Petya");
         String expected = "56584256";
 
-        String result = phoneBook.findByName();
+        String result = phoneBook.findByName("Petya");
 
         assertNotEquals(expected, result);
     }

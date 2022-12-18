@@ -20,7 +20,12 @@ public class PhoneBook {
         return hashMap.get(phoneNumber);
     }
 
-    public String findByName () {
+    public String findByName (String name) {
+        for (String key : hashMap.keySet()) {
+            if(hashMap.get(key).equals(name)){
+                return key;
+            }
+        }
         return null;
     }
 }
