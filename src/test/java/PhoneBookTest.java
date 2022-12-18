@@ -80,6 +80,7 @@ public class PhoneBookTest {
     @Test
     public void printAllNamesTrue() {
         PhoneBook phoneBook = Mockito.mock(PhoneBook.class);
+
         Mockito.doCallRealMethod().when(phoneBook).printAllNames();
 
         phoneBook.printAllNames();

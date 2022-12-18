@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.Comparator;
 import java.util.HashMap;
 
 public class PhoneBook {
@@ -12,7 +13,6 @@ public class PhoneBook {
             return true;
         }
         System.out.println("Ошибка: попытка добавления одинакового контакта. Попробуйте еще раз");
-
         return false;
     }
 
@@ -30,6 +30,12 @@ public class PhoneBook {
     }
 
     public void printAllNames() {
-        System.out.println("Hello");
+        try {
+            hashMap.values().stream()
+                    .sorted(Comparator.naturalOrder())
+                    .forEach(System.out::println);
+        } catch (NullPointerException e) {
+            System.out.println("Пустая телефонная книжка");
+        }
     }
 }
